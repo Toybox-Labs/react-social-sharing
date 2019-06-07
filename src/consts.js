@@ -38,7 +38,13 @@ export default {
       subject || ''
     )}&body=${encodeURIComponent((body && `${body}\n\n${link}`) || link)}`,
   pinterest: (link = '', message = '', media = undefined) =>
-https://pinterest.com/pin/create/button/?url=${encodeURIComponent( link )}&media=${encodeURIComponent(media ? media : link)}&description=${encodeURIComponent( message )},
+    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent( 
+      link 
+    )}&media=${encodeURIComponent(
+      media || link
+    )}&description=${encodeURIComponent( 
+      message 
+    )}`,
   linkedin: (link = '', message = '') =>
     `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
       link
