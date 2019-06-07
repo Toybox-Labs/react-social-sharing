@@ -37,12 +37,8 @@ export default {
     `mailto:?subject=${encodeURIComponent(
       subject || ''
     )}&body=${encodeURIComponent((body && `${body}\n\n${link}`) || link)}`,
-  pinterest: (link = '', message = '') =>
-    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
-      link
-    )}&media=${encodeURIComponent(link)}&description=${encodeURIComponent(
-      message
-    )}`,
+  pinterest: (link = '', message = '', media = undefined) =>
+https://pinterest.com/pin/create/button/?url=${encodeURIComponent( link )}&media=${encodeURIComponent(media ? media : link)}&description=${encodeURIComponent( message )},
   linkedin: (link = '', message = '') =>
     `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
       link
